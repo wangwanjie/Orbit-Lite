@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbit — Windows 与 macOS 效率工具合集</title>
+<meta name="description" content="Orbit 跨平台版：启动器、剪贴板、窗口管理、截图与系统维护，支持 Windows 10/11 与 macOS 13+。">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/png" href="assets/favicon-64.png">
+<style>
+  :root { --bg: #f5f5f7; --card: #fff; --text: #1d1d1f; --muted: #6e6e73; --accent: #3478f6; --border: rgb(0 0 0 / .08); }
+  @media (prefers-color-scheme: dark) { :root { --bg: #111114; --card: #1c1c20; --text: #f2f2f4; --muted: #9a9aa2; --accent: #4c8dff; --border: rgb(255 255 255 / .08); } }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.6 -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei UI", sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 64px 24px; }
+  header { text-align: center; }
+  header img { width: 128px; height: 128px; }
+  h1 { margin: 12px 0 4px; font-size: 40px; }
+  .lead { color: var(--muted); font-size: 17px; }
+  .lang { position: absolute; top: 16px; right: 20px; }
+  .lang button { border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: 6px; padding: 2px 10px; cursor: pointer; }
+  .downloads { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 36px 0; }
+  .download { display: block; padding: 20px 24px; border: 1px solid var(--border); border-radius: 14px; background: var(--card); color: inherit; text-decoration: none; transition: transform .2s ease-out, border-color .2s ease-out; }
+  .download:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .download b { display: block; font-size: 18px; }
+  .download span { color: var(--muted); font-size: 13px; }
+  .modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .module { padding: 16px 18px; border: 1px solid var(--border); border-radius: 12px; background: var(--card); }
+  .module b { display: block; margin-bottom: 4px; }
+  .module p { margin: 0; color: var(--muted); font-size: 13px; }
+  footer { margin-top: 48px; color: var(--muted); font-size: 13px; text-align: center; }
+  a { color: var(--accent); }
+  [data-en] { display: none; }
+  html[lang="en"] [data-zh] { display: none; }
+  html[lang="en"] [data-en] { display: revert; }
+</style>
+</head>
+<body>
+<div class="lang"><button type="button" id="lang">EN</button></div>
+<main>
+  <header>
+    <img src="assets/icon-256.png" alt="">
+    <h1>Orbit</h1>
+    <p class="lead" data-zh>同时支持 Windows 与 macOS 的效率工具合集：启动器、剪贴板、窗口管理、截图与系统维护。</p>
+    <p class="lead" data-en>A productivity toolkit for Windows and macOS: launcher, clipboard history, window management, screenshots and system maintenance.</p>
+  </header>
+  <section class="downloads">
+    <a class="download" href="https://github.com/wangwanjie/Orbit-RS/releases/latest/download/Orbit-Windows-Setup.exe">
+      <b data-zh>下载 Windows 版</b><b data-en>Download for Windows</b>
+      <span data-zh>Windows 10 / 11（x64），安装界面跟随系统语言</span><span data-en>Windows 10 / 11 (x64); installer follows the system language</span>
+    </a>
+    <a class="download" href="https://github.com/wangwanjie/Orbit-RS/releases/latest/download/Orbit-macOS.dmg">
+      <b data-zh>下载 macOS 版</b><b data-en>Download for macOS</b>
+      <span data-zh>macOS 13 或更高，Apple 芯片与 Intel 通用，已公证</span><span data-en>macOS 13 or later, Universal (Apple silicon &amp; Intel), notarized</span>
+    </a>
+  </section>
+  <section class="modules">
+    <div class="module"><b data-zh>启动器</b><b data-en>Launcher</b><p data-zh>应用（支持拼音）、计算器、网页搜索、文件、系统命令与脚本。</p><p data-en>Apps, calculator, web search, files, system commands and scripts.</p></div>
+    <div class="module"><b data-zh>剪贴板</b><b data-en>Clipboard</b><p data-zh>文本、图片、文件、链接、颜色，搜索、收藏夹与直接粘贴。</p><p data-en>Text, images, files, links and colors with search, collections and direct paste.</p></div>
+    <div class="module"><b data-zh>窗口管理</b><b data-en>Windows</b><p data-zh>半屏、四分之一、三分之一、最大化、跨显示器与边缘吸附。</p><p data-en>Halves, quarters, thirds, maximize, multi-display and edge snapping.</p></div>
+    <div class="module"><b data-zh>截图</b><b data-en>Screenshots</b><p data-zh>区域、窗口、全屏截图，标注、贴图与文字识别。</p><p data-en>Region, window and full-screen capture with annotation, pinning and OCR.</p></div>
+    <div class="module"><b data-zh>系统维护</b><b data-en>Maintenance</b><p data-zh>刷新 DNS、重建图标缓存等常用维护任务。</p><p data-en>Flush DNS, rebuild icon caches and other routine tasks.</p></div>
+  </section>
+  <footer>
+    <a href="https://github.com/wangwanjie/Orbit-RS/releases" data-zh>全部版本</a><a href="https://github.com/wangwanjie/Orbit-RS/releases" data-en>All releases</a>
+    · <a href="https://github.com/wangwanjie/Orbit" data-zh>macOS 原生版</a><a href="https://github.com/wangwanjie/Orbit" data-en>Native macOS edition</a>
+  </footer>
+</main>
+<script>
+  // 语言：localStorage > 浏览器语言
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('orbit-rs.lang'); } catch (e) {}
+    var lang = saved || (navigator.language.toLowerCase().startsWith('zh') ? 'zh-Hans' : 'en');
+    var button = document.getElementById('lang');
+    function apply(next) {
+      document.documentElement.lang = next;
+      button.textContent = next === 'en' ? '中文' : 'EN';
+      try { localStorage.setItem('orbit-rs.lang', next); } catch (e) {}
+    }
+    button.addEventListener('click', function () { apply(document.documentElement.lang === 'en' ? 'zh-Hans' : 'en'); });
+    apply(lang);
+  })();
+</script>
+</body>
+</html>
